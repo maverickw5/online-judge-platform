@@ -49,16 +49,30 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
 # How to modify using Git?
 
 Clone the git repository
-### `git clone https://github.com/maverickw5/online-judge-platform.git`
+```sh
+ `git clone https://github.com/maverickw5/online-judge-platform.git`
+ ```
 
 1. Pull
-### `git pull`
+```sh
+ `git pull`
+ ```
 2. Add changes
-### `git add .`
-### `git add {filename}`
+For all modified files
+```sh
+ `git add .`
+ ```
+For targeted file
+```sh
+ `git add {filename}`
+ ```
 3. Commit
-### `git commit -m '{message}'`
+```sh
+ `git commit -m '{message}'`
+ ```
 3. Push
-### `git push`
+```sh
+ ``git push`
+ ```
 
 
