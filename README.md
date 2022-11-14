@@ -11,12 +11,12 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
 
 # Project Structure
 
-- README.md
-- node_modules
-- package.json
-- .gitignore
-- ..tailwind files
-- ..firebase files
+- README.md (ignore)
+- node_modules (ignore)
+- package.json (ignore)
+- .gitignore (ignore)
+- ..tailwind files (ignore)
+- ..firebase files (ignore)
 - public
     - index.html
     - favicon.ico
@@ -38,10 +38,27 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
     - index.js
     - index.css
 - server
-    - node_modules
-    - package.json
+    - node_modules (ignore)
+    - package.json (ignore)
     - tools
         - Compiler.js
         - 
     - server.js
     - routes.js
+    
+# How to modify using Git?
+
+Clone the git repository
+### `git clone https://github.com/maverickw5/online-judge-platform.git`
+
+1. Pull
+### `git pull`
+2. Add changes
+### `git add .`
+### `git add {filename}`
+3. Commit
+### `git commit -m '{message}'`
+3. Push
+### `git push`
+
+
