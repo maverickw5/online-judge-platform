@@ -72,7 +72,7 @@ For targeted file
  ```
 3. Push
 ```sh
- ``git push`
+ `git push`
  ```
 
 
