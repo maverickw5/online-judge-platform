@@ -58,14 +58,14 @@ git clone https://github.com/maverickw5/online-judge-platform.git
 git pull
  ```
 2. Add changes
-For all modified files
-```sh
-git add .
- ```
-For targeted file
-```sh
-git add {filename}
- ```
+    For all modified files
+    ```sh
+    git add .
+     ```
+    For targeted file
+    ```sh
+    git add {filename}
+     ```
 3. Commit
 ```sh
 git commit -m '{message}'
