@@ -58,6 +58,7 @@ git clone https://github.com/maverickw5/online-judge-platform.git
 git pull
  ```
 2. Add changes
+
     For all modified files
     ```sh
     git add .
