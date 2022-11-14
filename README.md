@@ -50,29 +50,29 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
 
 Clone the git repository
 ```sh
- `git clone https://github.com/maverickw5/online-judge-platform.git`
+git clone https://github.com/maverickw5/online-judge-platform.git
  ```
 
 1. Pull
 ```sh
- git pull
+git pull
  ```
 2. Add changes
 For all modified files
 ```sh
- git add .
+git add .
  ```
 For targeted file
 ```sh
- git add {filename}
+git add {filename}
  ```
 3. Commit
 ```sh
- git commit -m '{message}'
+git commit -m '{message}'
  ```
 3. Push
 ```sh
- git push
+git push
  ```
 
 
