@@ -21,6 +21,7 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
     - favicon.ico
 - src
     - pages
+        - Home.js
         - Judge.js
         - Login.js
         - Register.js
@@ -32,8 +33,7 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
             - 
         - css
             - Judge.css
-    - App.js (Home page & route to dashboard)
-    - App.css
+    - App.js (Routes)
     - index.js
     - index.css
 - server
