@@ -16,7 +16,6 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
 - package.json (ignore)
 - .gitignore (ignore)
 - ..tailwind files (ignore)
-- ..firebase files (ignore)
 - public
     - index.html
     - favicon.ico
@@ -40,6 +39,7 @@ Repository for 2022 Software Engineering Project: Online Judge Platform
 - server
     - node_modules (ignore)
     - package.json (ignore)
+    - ..firebase files (ignore)
     - tools
         - Compiler.js
         - 
