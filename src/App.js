@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
-import Dashboard from '/pages/Dashboard';
+import Dashboard from './pages/Dashboard';
 import Judge from './pages/Judge';
 import Ranking from './pages/Ranking';
 
