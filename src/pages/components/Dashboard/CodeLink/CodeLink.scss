@@ -1,0 +1,27 @@
+.codelink{
+    position: absolute; 
+    top: 300px;
+    width: 300px;
+    height: 350px;
+    background-color: rgba(255,255,255,0.1);
+     box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+     border: 1px solid rgba(255,255,255,0.5);
+     border-right: 1px solid rgba(255,255,255,0.2);
+     border-bottom: 1px solid rgba(255,255,255,0.2);
+     border-radius: 10px;
+     display: flex;
+     flex-direction: row;
+     color:#fff;
+     backdrop-filter: blur(10px);
+     z-index: 60;
+     margin-right: 0px;
+     align-items: center;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+ }
+ .codelink a{
+    text-decoration:none;
+    color: white;
+    margin: 5px;
+  }

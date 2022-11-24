@@ -1,0 +1,31 @@
+.pet{
+    position: relative;
+    min-width: 350px;
+    max-height: 500px;
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    z-index: 10;
+    padding: 20px;
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-right: 50px;
+    color: white;
+    align-items: center;
+   }
+  .pet img{
+    position: relative;
+    bottom: 10%;
+    width: 192px;
+    height: 288px;
+    z-index: 0;
+   }
+   .pet h3{
+    z-index: 20;
+   }
+  

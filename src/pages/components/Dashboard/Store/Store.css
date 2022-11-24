@@ -1,0 +1,7 @@
+.store img{
+    position: relative;
+    bottom: -10%;
+    width: 192px;
+    height: 288px;
+    z-index: 0;
+   }

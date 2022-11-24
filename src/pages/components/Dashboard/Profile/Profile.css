@@ -1,0 +1,35 @@
+.proflie .p{
+    position: relative; 
+    width: 300px;
+    max-height: 100px;
+    background-color: rgba(255,255,255,0.1);
+     box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+     border: 1px solid rgba(255,255,255,0.5);
+     border-right: 1px solid rgba(255,255,255,0.2);
+     border-bottom: 1px solid rgba(255,255,255,0.2);
+     border-radius: 10px;
+     display: flex;
+     flex-direction: row;
+     color:#fff;
+     backdrop-filter: blur(10px);
+     z-index: 50;
+     margin-top: 50px;
+     margin-right: 50px;
+ }
+ .proflie .p .name{
+   margin: 10px;
+ }
+ .proflie .p .score{
+     padding: 10px;
+     margin: 10px;
+ }
+ .proflie .p .coin{
+     padding: 10px;
+     margin: 10px;
+ }
+ .proflie .ch{
+    display: none
+ }
+ .proflie .c{
+    color: white
+ }

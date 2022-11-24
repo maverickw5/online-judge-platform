@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.signup {
+  font-family: 'Peralta', cursive;
+  background-image: url("./space.jpg");
+  background-size: cover;
+  display:flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.box{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-height: 70vh;
+    max-width: 30vw;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    justify-content: center;
+    input{
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+      border-radius: 2rem;
+      width: 80%;
+      height: 3rem;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      color: #3c345e;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+        &:focus{
+            display: inline-block;
+            box-shadow: 0 0 0 0.2rem #b9abe0;
+            backdrop-filter: blur(12rem);
+            border-radius: 2rem;
+        }
+        &::placehoder{
+            color: #b9abe099;
+            font-weight: 100;
+            font-size: 1rem;
+        }
+      }
+    button{
+      background: linear-gradient(to right, #14163c 0%, #03217b 79%);
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      width: 65%;
+      height: 3rem;
+      border: none;
+      color: white;
+      border-radius: 2rem;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    
+}
+ 
+h2{margin: 3rem 0 2rem 0;}
