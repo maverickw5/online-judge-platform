@@ -31,5 +31,9 @@
     display: none
  }
  .proflie .c{
-    color: white
+    color: white;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+   
  }

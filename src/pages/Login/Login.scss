@@ -65,7 +65,21 @@
       cursor: pointer;
       margin-bottom: 10px;
     }
+    a{
+      background: linear-gradient(to right, #14163c 0%, #03217b 79%);
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      width: 80%;
+      height: 3rem;
+      border: none;
+      color: white;
+      border-radius: 2rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      text-align: center;
+    }
     
 }
  
-.login h2{margin: 3rem 0 2rem 0;}
+.login h2{margin: 3rem 0 2rem 0;
+font-size: 30px;}

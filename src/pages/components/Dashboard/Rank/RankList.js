@@ -1,6 +1,15 @@
 import './RankList.css';
-
+import {useEffect} from 'react'
+import Axios from "axios";
 function RankList() {
+    useEffect(()=>{
+        const Rank = Axios.get('http://127.0.0.1:3001/getRANK').then((user)=>{
+            console.log(user.data[1]);
+        });
+        
+        
+        
+    },[])
   return (
         <div className="ranklist">
             <h3>Rank List</h3>

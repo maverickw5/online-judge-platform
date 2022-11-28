@@ -6,7 +6,7 @@
     font-family: 'Peralta', cursive;
     
 }
-section{
+.dashboard{
   position: relative;
   background: #161623;
   min-height: 100vh;
@@ -14,7 +14,7 @@ section{
   display: flex;
   justify-content: center;
 }
-section::before{
+.dashboard::before{
   content: ' ';
   position: absolute;
   width: 400px;
@@ -23,7 +23,7 @@ section::before{
   border-radius: 50%;
   transform: translate(-100px, -0px);
 }
-section::after{
+.dashboard::after{
   content: ' ';
   position: absolute;
   width: 350px;
@@ -32,7 +32,7 @@ section::after{
   border-radius: 50%;
   transform: translate(500px, 240px);
 }
-.ball1{
+.dashboard .ball1{
   position: absolute;
   width: 250px;
   height: 250px;
@@ -41,7 +41,7 @@ section::after{
   transform: translate(-500px, 500px);
   z-index: 10;
 }
-.button{
+.dashboard .button{
   position: relative;
   min-width: 100px;
   max-height: 50px;
@@ -59,7 +59,7 @@ section::after{
   text-align: center;
   margin-top: 600px;
 }
-.button a{
+.dashboard .button a{
   text-decoration:none;
   color: white;
   margin: 5px;

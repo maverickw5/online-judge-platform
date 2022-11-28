@@ -4,21 +4,22 @@
   padding: 0;
   box-sizing: border-box;
 }
-.signup {
+.register {
   font-family: 'Peralta', cursive;
   background-image: url("./space.jpg");
   background-size: cover;
   display:flex;
   justify-content: center;
   min-height: 100vh;
+  
 }
-.box{
-    margin-top: 5%;
+.box form{
+    margin-top: 10%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-height: 70vh;
-    max-width: 30vw;
+    min-height: 60vh;
+    min-width: 30vw;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(8.5px);
@@ -32,7 +33,7 @@
       background: rgba(255,255,255,0.15);
       box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
       border-radius: 2rem;
-      width: 80%;
+      width: 50%;
       height: 3rem;
       padding: 1rem;
       border: none;
@@ -53,7 +54,10 @@
             font-size: 1rem;
         }
       }
-    button{
+      input:checked + label{
+        border:1px solid rgb(176, 44, 233);
+      }
+    .button{
       background: linear-gradient(to right, #14163c 0%, #03217b 79%);
       text-transform: uppercase;
       letter-spacing: 0.2rem;
@@ -65,7 +69,105 @@
       cursor: pointer;
       margin-bottom: 10px;
     }
+    .selectPet{
+      display:flex;
+      flex-direction: row;
+      input{
+        position: relative;
+        z-index: 20;
+        display: none;
+      }
+      
+      img{
+        position: relative;
+        top: -55px;
+        z-index: 0;
+      }
+      .pickOne{
+        height: 120px;
+        background-color: rgba(99, 135, 204,0.5);
+        margin:2px;
+        box-sizing: border-box;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5%;
+        position: relative;
+        
+        svg{
+          background: #8373e6;
+          font-size:20px;
+          position: relative;
+          border-radius: 50px;
+          padding:3px;
+          transition: 0.2s;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .selectProfileImage{
+      position: relative;
+      display:flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+      input{
+        position: relative;
+        z-index: 20;
+        display: none;
+      }
+      .pickOne{
+        height: 100px;
+        width: 70px;
+        background-color: rgb(99, 135, 204,0.5);
+        box-sizing: border-box;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5%;
+        position: relative;
+        margin: 2px;
+        img{
+          position: relative;
+          left: 10px;
+        }
+        svg{
+          margin-bottom: 10px;
+          background: #8373e6;
+          font-size:15px;
+          position: relative;
+          border-radius: 50px;
+          padding:3px;
+          transition: 0.2s;
+          pointer-events: none;
+        }
+      }
+    }
     
 }
  
-h2{margin: 3rem 0 2rem 0;}
+.register h2{margin: 3rem 0 2rem 0;}
+.register .selectPet .pickOne input:checked + .pick{
+  height: 120px;
+  background-color: rgba(1, 7, 19, 0.5);
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5%;
+  transition: 0.2s;
+  
+  svg{
+    color:#03217b;
+  }
+}
+.register .selectProfileImage .pickOne input:checked + .pick{
+  height: 100px;
+  width: 70px;
+  background-color:  rgba(1, 7, 19, 0.5);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5%;
+  position: relative;
+  
+  svg{
+    color:#03217b;
+  }
+}

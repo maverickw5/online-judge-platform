@@ -49,10 +49,13 @@ function Profile() {
         </div>
         <div className={isActive ? 'c' : 'ch'}>
             <h4>choose profile</h4>
-            <img src={profile1} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick={(e)=>chooseProfile1(e)}/>
-            <img src={profile2} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick = {(e)=>chooseProfile2(e)}/>
-            <img src={profile3} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick = {(e)=>chooseProfile3(e)}/>
-            <img src={profile4} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick = {(e)=>chooseProfile4(e)}/>
+            <div className='profileimg' style={{display:"flex",flexDirection:"row"}}>
+                <img src={profile1} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick={(e)=>chooseProfile1(e)}/>
+                <img src={profile2} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick = {(e)=>chooseProfile2(e)}/>
+                <img src={profile3} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick = {(e)=>chooseProfile3(e)}/>
+                <img src={profile4} alt="" style={{position:"relative",width: "50px",height:"50px",cursor:"pointer"}} onClick = {(e)=>chooseProfile4(e)}/>
+            </div>
+           
         </div> 
     </div>
   )

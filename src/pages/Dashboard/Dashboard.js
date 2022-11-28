@@ -7,7 +7,6 @@ import {useState, useEffect} from 'react'
 import CodeLink from '../components/Dashboard/CodeLink/CodeLink'
 import './Dashboard.css';
 function Dashboard() {
-
   return (
       <section className='dashboard'>
         <div className='ball1'></div>
