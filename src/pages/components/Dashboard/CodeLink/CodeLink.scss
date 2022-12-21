@@ -24,4 +24,12 @@
     text-decoration:none;
     color: white;
     margin: 5px;
+    font-size: 50px;
+  }
+  .codelink a:hover{
+    margin: 5px;
+    padding: 30px;
+    background-color: rgb(147, 69, 237);
+    border-radius: 50%;
+    color: rgb(195, 223, 243)
   }

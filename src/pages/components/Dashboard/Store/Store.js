@@ -2,24 +2,61 @@ import React from 'react'
 import store from "./store.png"
 import {useEffect, useState} from 'react'
 import './Store.css'
-export const EggQuantity = 3
+import Axios from "axios";
+import { useNavigate } from 'react-router-dom';
+export const foodQuantity = 3
 
-const Store = () => {
-  const[coin,setCoin] = useState(1234); 
-  const[Egg,getEgg]= useState(Math.floor(Math.random()*EggQuantity)+1);
+const Store = (props) => {
+  const navigate = useNavigate();
+  const[food,getFood]= useState(Math.floor(Math.random()*foodQuantity));
   const[im,changeIm] = useState(store);
-
-  function GetEgg(){
-    setCoin (prev => prev - 10);
-    getEgg(Math.floor(Math.random()*EggQuantity)+1);
-    window.alert('抽到'+Egg+'號蛋');
+  const [money, setMoney] = useState(props.money)
+  const foodName = ['cookie','strawberry','candy']
+  async function GetFood (){
+    
+    //setCoin (prev => prev - 30);
+    if(window.sessionStorage.getItem('money') < 30){
+      alert("You don't have enough money");
+    }
+    else{
+      getFood(Math.floor(Math.random()*foodQuantity));
+      window.alert('抽到'+ foodName[food]);
+      await Axios.post('http://localhost:8000/updatemoney',{userID: window.localStorage.getItem('userID'), moneyReduction:30}).then((res)=>{
+      let data = res.data;
+      console.log(data);
+      console.log("I'm working")
+      window.sessionStorage.setItem('money',data.money);
+      });
+      if(food === 0){
+        Axios.get(`http://localhost:3001/setUserCookieADD?email=` + window.localStorage.getItem('email')).then((response)=>{
+        let data = response.data;
+        console.log(data);
+      })
+      }
+      else if(food === 1){
+        Axios.get(`http://localhost:3001/setUserStrawberryADD?email=` + window.localStorage.getItem('email')).then((response)=>{
+        let data = response.data;
+        console.log(data);
+      })
+      }
+      else if(food === 2){
+        Axios.get(`http://localhost:3001/setUserCandyADD?email=` + window.localStorage.getItem('email')).then((response)=>{
+        let data = response.data;
+        console.log(data);
+      })
+      }
+      
+      window.location.reload(true);
+    }
     
   };
+
+
   return (
     <div className='store'>
       <h3>Store</h3>
-      <h3>coin :<span>{coin}</span></h3>
-      <img src={im} alt=""  onClick = {GetEgg}/>
+      <h3>$<span>30</span></h3>
+      <img src={im} alt=""  onClick = {GetFood}/>
       
     </div>
   );

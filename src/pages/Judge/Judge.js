@@ -9,7 +9,7 @@ function Judge() {
       <div className="content relative">
         <div className="container mx-auto p-4">
           <div className="flex items-center gap-2">
-            <Link to='/'>
+            <Link to='/dashboard/rank'>
               <button><TbArrowBackUp size={25} /></button>
             </Link>
             <div className="pl-3">
