@@ -1,12 +1,13 @@
 import { Link , Routes, Route, useLocation, useNavigate} from 'react-router-dom';
-import RankList from '../components/Dashboard/Rank/RankList';
-import Pet from '../components/Dashboard/Pet/Pet';
-import Profile from '../components/Dashboard/Profile/Profile';
-import Store from '../components/Dashboard/Store/Store';
+import RankList from './components/Rank/RankList';
+import Pet from './components/Pet/Pet';
+import Profile from './components/Profile/Profile';
+import Store from './components/Store/Store';
 import {useState, useEffect} from 'react'
-import CodeLink from '../components/Dashboard/CodeLink/CodeLink'
+import CodeLink from './components/CodeLink/CodeLink'
 import './Dashboard.css';
-import Axios from 'axios'
+import Axios from 'axios';
+
 function Dashboard(props) {
   //const {changeEmail, email} = props;
   function Logout(){
