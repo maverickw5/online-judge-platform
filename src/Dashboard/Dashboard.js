@@ -23,7 +23,7 @@ function Dashboard(props) {
     const [currentMoney, setCurrentMoney]= useState(money)
   useEffect(()=>{
     console.log("render");
-    Axios.post('http://localhost:8000/profile',{userID:window.localStorage.getItem('userID')})
+    Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/userdata',{userID:window.localStorage.getItem('userID')})
     .then((response)=>{
       //console.log(response);
       const data = response.data;

@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Peralta', cursive;
-    
+   
 }
 .dashboard{
+  font-family: 'Peralta', cursive;
   position: relative;
   background: #161623;
   min-height: 100vh;

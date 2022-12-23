@@ -21,7 +21,7 @@ const Store = (props) => {
     else{
       getFood(Math.floor(Math.random()*foodQuantity));
       window.alert('抽到'+ foodName[food]);
-      await Axios.post('http://localhost:8000/updatemoney',{userID: window.localStorage.getItem('userID'), moneyReduction:30}).then((res)=>{
+      await Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/updatemoney',{userID: window.localStorage.getItem('userID'), moneyReduction:30}).then((res)=>{
       let data = res.data;
       console.log(data);
       console.log("I'm working")

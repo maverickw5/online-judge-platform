@@ -170,4 +170,21 @@
   svg{
     color:#03217b;
   }
+  
+}
+.register h1{
+  position: fixed;
+  top: 20px;
+  left: 18vw;
+  color: white;
+  font-size: 50px;
+  z-index: 8;
+}
+
+.register h1:before{
+  content: '</>';
+  position: absolute;
+  font-size: 1.5em;
+  left: -1.8em;
+  top: -.2em;
 }

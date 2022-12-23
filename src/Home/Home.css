@@ -3,9 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Peralta', cursive;
 }
 #HomePage{
+    font-family: 'Peralta', cursive;
     position: relative;
     background: linear-gradient(#2b1055,#7597de);
     width: 100%;
@@ -49,11 +49,11 @@ h2#text{
 }
 
 
-p{
+#HomePage p{
     color: white;
 }
 
-h1{
+#HomePage h1{
     position: fixed;
     top: 20px;
     left: 18vw;
@@ -62,7 +62,7 @@ h1{
     z-index: 8;
 }
 
-h1:before{
+#HomePage h1:before{
     content: '</>';
     position: absolute;
     font-size: 1.5em;
@@ -134,8 +134,12 @@ h1:before{
     font-size: 3.5em;
     margin-bottom: 10px;
     color: white;
+    font-family: 'Peralta', cursive;
 }
 #sec .description{
     position:relative;
     left: 40%;
+}
+#set p{
+    font-family: 'Peralta', cursive;
 }

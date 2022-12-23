@@ -48,7 +48,7 @@ function Register() {
       const PetSet = Axios.get(`http://localhost:3001/setPetDATA?email=` + emailInputRef.current.value + `&type=`+pet).then((response)=>{
 
       })
-      const data = Axios.post('http://localhost:8000/register',//https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register
+      const data = Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register',//https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register
       {username:userName,email:emailInputRef.current.value,password:hashPassword,confirmpassword:hashPassword,profilePicture:profileImg})
       .then((response)=>{
         console.log(response);//回傳一個結果

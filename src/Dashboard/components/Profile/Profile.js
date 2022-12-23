@@ -14,7 +14,7 @@ function Profile(props) {
     function chooseProfile1(e){
         setProfileImg(profile1);
         window.sessionStorage.setItem('profilePicture',1);
-            Axios.post('http://localhost:8000/updateprofile',{userID:window.localStorage.getItem('userID'),profilePicture:"1"})
+            Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/updateprofilepic',{userID:window.localStorage.getItem('userID'),profilePicture:"1"})
             .then((response)=>{
               
             });
@@ -23,7 +23,7 @@ function Profile(props) {
     function chooseProfile2(e){
         setProfileImg(profile2);
         window.sessionStorage.setItem('profilePicture',2);
-        Axios.post('http://localhost:8000/updateprofile',{userID:window.localStorage.getItem('userID'),profilePicture:"2"})
+        Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/updateprofilepic',{userID:window.localStorage.getItem('userID'),profilePicture:"2"})
         .then((response)=>{
         });
         setIsActive(current => !current);
@@ -31,7 +31,7 @@ function Profile(props) {
     function chooseProfile3(e){
         setProfileImg(profile3);
         window.sessionStorage.setItem('profilePicture',3);
-        Axios.post('http://localhost:8000/updateprofile',{userID:window.localStorage.getItem('userID'),profilePicture:"3"})
+        Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/updateprofilepic',{userID:window.localStorage.getItem('userID'),profilePicture:"3"})
         .then((response)=>{
         });
         setIsActive(current => !current);
@@ -39,7 +39,7 @@ function Profile(props) {
     function chooseProfile4(e){
         setProfileImg(profile4);
         window.sessionStorage.setItem('profilePicture',4);
-        Axios.post('http://localhost:8000/updateprofile',{userID:window.localStorage.getItem('userID'),profilePicture:"4"})
+        Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/updateprofilepic',{userID:window.localStorage.getItem('userID'),profilePicture:"4"})
         .then((response)=>{
         });
         setIsActive(current => !current);

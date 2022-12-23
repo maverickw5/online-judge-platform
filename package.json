@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.20",
     "sass": "^1.56.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",

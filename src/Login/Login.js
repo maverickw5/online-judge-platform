@@ -15,7 +15,7 @@ function Login({changeEmail}) {
     const navigate = useNavigate();
     
     const login = ()=>{
-      Axios.post('http://localhost:8000/login',{email:email,password:password}).then((response)=>{
+      Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/login',{email:email,password:password}).then((response)=>{
         console.log(response);
         const data = response.data;
         console.log(data.msg);
