@@ -48,7 +48,7 @@ function Register() {
         const hashPassword = bcrypt.hashSync(password,10);
       
         //can call post api here
-      const PetSet = Axios.get(`http://120.126.151.169:5001/setPetDATA?email=` + emailInputRef.current.value + `&type=`+pet).then((response)=>{
+      const PetSet = Axios.get(`https://120.126.151.169:5001/setPetDATA?email=` + emailInputRef.current.value + `&type=`+pet).then((response)=>{
 
       })
       const data = Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register',//https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register
