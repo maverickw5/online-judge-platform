@@ -22,6 +22,10 @@ function Dashboard(props) {
     const [score, setScore] = useState();
     const [currentMoney, setCurrentMoney]= useState(money)
   useEffect(()=>{
+    sessionStorage.removeItem("lang");
+    sessionStorage.removeItem("code");
+    sessionStorage.removeItem("time");
+    sessionStorage.removeItem("problemID");
     console.log("render");
     Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/userdata',{userID:window.localStorage.getItem('userID')})
     .then((response)=>{
