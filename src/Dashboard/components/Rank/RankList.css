@@ -24,7 +24,7 @@
   color: #fff;
   margin-bottom: 20px;
 }
-.ranklist .list .content{
+.ranklist .list .contentRANK{
   position: relative;
   display: flex;
   padding: 10px;
@@ -35,7 +35,7 @@
   flex-direction: column;
 }
 
-.ranklist .list .content{
+.ranklist .list .contentRANK{
   display: flex;
   flex-direction:column;
   color: #fff;
@@ -44,7 +44,7 @@
 
 
 
-.ranklist .list .content .rank{
+.ranklist .list .contentRANK .rank{
   color: white;
   text-shadow: 2px 2px 3px #f9b2f8fe;
   font-size: 25px;

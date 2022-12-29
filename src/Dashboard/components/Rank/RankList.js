@@ -27,7 +27,7 @@ function RankList() {
                 {
                     rankList.map((rank,index)=>{
                         return(
-                            <div className="content">
+                            <div className="contentRANK">
                                 <h4 className="rank">{index+1}</h4>
                                 <h4>name : {rank.username}</h4>
                                 <h4>score : {rank.score}</h4>

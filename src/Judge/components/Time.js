@@ -30,21 +30,21 @@ function Time(props) {
     }, [start]);
 
     useEffect(() => {
-        if (props.isSucceed) {
+        if (props.isSucceed === 1) {
             setStart(false);
-            // record to database
-            // axios
-            //     .post("http://localhost:8080/usersucceed", {
-            //         userID: "5hwf65vWB6zSqf2rFVd5",
-            //         problemID: props.problemID,
-            //         minute: time / 60000
-            //     })
-            //     .then(({data}) => {
-            //         console.log(data);
-            //     })
-            //     .catch(({err}) => {
-            //         console.log(err);
-            //     })
+            axios
+                .post(baseURL+"/usersucceed", {
+                    userID: localStorage.getItem("userID"),
+                    problemID: props.problemID,
+                    minute: time / 60000
+                })
+                .then(({data}) => {
+                    console.log(data);
+                    setTime(0);
+                })
+                .catch(({err}) => {
+                    console.log(err);
+                })
         }
     }, [props.isSucceed]);
 

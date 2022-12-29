@@ -51,7 +51,7 @@ function CodeEditor(props) {
     const [output, setOutput] = useState();
     const runCode = () => {
         axios
-            .post("http://localhost:8080/run", {
+            .post(baseURL+"/run", {
                 code: code,
                 input: input,
                 lang: lang
@@ -64,27 +64,41 @@ function CodeEditor(props) {
                 console.log(err);
             })
     };
-
+    
     //Submit code to API
-    const [isSucceed, setIsSucceed] = useState(false);
+    const [isSucceed, setIsSucceed] = useState(-1);
     const submitCode = () => {
-        // axios
-        //     .post("http://localhost:8080/submit", {
-        //         problemID: sessionStorage.getItem("problemID"),
-        //         code: code,
-        //         lang: lang
-        //     })
-        //     .then(({data}) => {
-        //         console.log(data) //delete
-        //         if (data === 'Success') {
-        //             setIsSucceed(true);
-        //             props.setBlur("blur(5px)");
-        //         }
-        //     })
-        //     .catch(({err}) => {
-        //         console.log(err);
-        //     })
+        axios
+            .post(baseURL+"/submit", {
+                problemID: sessionStorage.getItem("problemID"),
+                code: code,
+                lang: lang
+            })
+            .then(({data}) => {
+                console.log(data) //delete
+                if (data === 'Success') {
+                    setIsSucceed(1);
+                } else {
+                    setIsSucceed(0);
+                }
+            })
+            .catch(({err}) => {
+                console.log(err);
+            })
     };
+
+    //Popup controller
+    const [open, setOpen] = useState(false);
+    const closeModal = () => {
+        if (isSucceed === 1) {
+            sessionStorage.clear();
+            window.location.reload();
+        } else {
+            setOpen(false);
+            props.setBlur("blur(0)");
+            setIsSucceed(0);
+        }
+    }
 
     return (
         <div className="w-full h-full flex flex-col gap-2">
@@ -98,15 +112,20 @@ function CodeEditor(props) {
                     <option value="java">Java</option>
                 </select>
                 <div className="border-2 border-black flex flex-row divide-x-2 divide-black rounded-md bg-black">
-                    <button className="place-items-center p-1 pl-2 pr-2 text-white rounded-l bg-yellow-500 transition ease-in-out delay-50 hover:scale-95" onClick={runCode}>
+                    <button className="p-1 pl-2 pr-2 text-white rounded-l bg-yellow-500 transition ease-in-out delay-50 hover:scale-95" onClick={runCode}>
                         <BsPlayFill size={20} />
                     </button>
-                    <Popup trigger={
-                        <button className="text-center p-1 pl-3 pr-3 text-white rounded-r bg-green-500 transition ease-in-out delay-50 hover:scale-95">
-                            Submit
-                        </button>
-                    } modal nested>
-                        <SubmitPopup submitCode={submitCode} isSucceed={isSucceed} setIsSucceed={setIsSucceed} setBlur={props.setBlur} />
+                    <button className="text-center p-1 pl-3 pr-3 text-white rounded-r bg-green-500 transition ease-in-out delay-50 hover:scale-95" 
+                        onClick={() => {
+                            setOpen(o => !o);
+                            submitCode();
+                            props.setBlur("blur(5px)");
+                        }}
+                    >
+                        Submit
+                    </button>
+                    <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+                        <SubmitPopup isSucceed={isSucceed} closeModal={closeModal} />
                     </Popup>
                 </div>
             </div>
@@ -114,21 +133,21 @@ function CodeEditor(props) {
                 <CodeMirror
                     value={code}
                     theme={githubDark}
-                    height="300px"
+                    height="1585px"
                     extensions={getLang}
                     onChange={getCode}
                 />
             </div>
-            <div className="basis-1/4 overflow-auto rounded-2xl grid grid-cols-2 divide-x divide-solid bg-black">
-                <div className="text-center p-1 text-white overflow-auto">
+            <div className="basis-1/4 rounded-2xl grid grid-cols-2 divide-x divide-solid bg-black">
+                <div className="text-center p-1 text-white">
                     Input
                     <div className="pl-2 pr-2 text-left">
-                        <textarea placeholder=">" className="font-mono text-left text-sm outline-none resize-none overflow-hidden w-full h-14 bg-black" onChange={e=>{setInput(e.target.value)}}></textarea>
+                        <textarea placeholder=">" className="font-mono text-left text-sm outline-none resize-none overflow-hidden w-full h-16 bg-black" onChange={e=>{setInput(e.target.value)}}></textarea>
                     </div>
                 </div>
                 <div className="text-center p-1 text-white overflow-auto">
                     Output
-                    <div className="font-mono text-left text-sm output pl-2 pr-2 text-white">
+                    <div className="h-20 w-full font-mono text-left text-sm pl-2 pr-2 text-white">
                         {output}
                     </div>
                 </div>
