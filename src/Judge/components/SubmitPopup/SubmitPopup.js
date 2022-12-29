@@ -30,7 +30,7 @@ function SubmitPopup(props) {
                     console.log(err);
                 })
         }
-    }, [props.isSucceed]);
+    }, [props]);
     
     if (props.isSucceed === 1) {
         return (
