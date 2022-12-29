@@ -27,7 +27,7 @@ function Judge() {
     if (sessionStorage.getItem("problemID") === null) {
       axios
         .post(baseURL+"/randomproblemid", {
-          userID: "5hwf65vWB6zSqf2rFVd5" //localStorage.getItem("userID")
+          userID: localStorage.getItem("userID")
         })
         .then(({data}) => {
           sessionStorage.setItem("problemID", data);
