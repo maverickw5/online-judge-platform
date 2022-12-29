@@ -45,7 +45,9 @@
 
 
 .ranklist .list .content .rank{
-  color: aqua;
+  color: white;
+  text-shadow: 2px 2px 3px #f9b2f8fe;
+  font-size: 25px;
 }
 
   

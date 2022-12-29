@@ -25,11 +25,16 @@
     color: white;
     margin: 10px;
     font-size: 30px;
+    transition: 0.5s;
   }
   .codelink a:hover{
-    margin: 5px;
-    padding: 30px;
-    background-color: rgb(147, 69, 237);
-    border-radius: 50%;
-    color: rgb(195, 223, 243)
+    // margin: 5px;
+    // padding: 30px;
+    // background-color: rgb(147, 69, 237);
+    // border-radius: 50%;
+    // color: rgb(195, 223, 243)
+    color:#310642d2;
+    text-shadow: -3px 3px 5px #fff;
+    transform: scale(1.1,1.1) translate(5px, -2px);
+
   }
