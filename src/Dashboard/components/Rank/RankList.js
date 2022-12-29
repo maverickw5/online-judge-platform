@@ -5,7 +5,7 @@ function RankList() {
     const regRank = [];
     const [rankList, setRankList] = useState([])
     useEffect(()=>{
-        const Rank = Axios.get('http://127.0.0.1:3001/getRANK').then((user)=>{
+        const Rank = Axios.get('http://120.126.151.169:5001/getRANK').then((user)=>{
             let data = user.data;
             //console.log(data[2]);
             let rankLength = Object.keys(data);

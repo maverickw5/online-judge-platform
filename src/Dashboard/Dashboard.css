@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -41,6 +41,81 @@
   transform: translate(-500px, 500px);
   z-index: 10;
 }
+.dashboard .button{
+  position: relative;
+  min-width: 100px;
+  max-height: 50px;
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  z-index: 10;
+  padding: 20px;
+  backdrop-filter: blur(25px);
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 47px;
+  justify-content: center;
+
+}
+.dashboard .button a{
+  text-decoration:none;
+  color: white;
+  margin: 5px;
+}
+
+//////////////// */
+@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    
+}
+.dashboard{
+  font-family: 'Peralta', cursive;
+  position: relative;
+  background: #161623;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  background-image: url("./2345.png");
+  background-size: cover;
+
+}
+/* .dashboard::before{
+  content: ' ';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#ffc107,#e91e63);
+  border-radius: 50%;
+  transform: translate(-100px, -0px);
+}
+.dashboard::after{
+  content: ' ';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(#2196f3,#e837f4);
+  border-radius: 50%;
+  transform: translate(500px, 240px);
+}
+.dashboard .ball1{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(#c865ef,#e15f61);
+  border-radius: 50%;
+  transform: translate(-500px, 500px);
+  z-index: 10;
+} */
 .dashboard .button{
   position: relative;
   min-width: 100px;

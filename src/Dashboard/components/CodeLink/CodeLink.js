@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function CodeLink() {
   return (
     <div className='codelink'>
-        <Link className="" to="/judge">coding</Link> 
+        <Link className="" to="/judge">start coding</Link> 
     </div>
   )
 }

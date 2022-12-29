@@ -5,12 +5,16 @@ import moon from'./moon.png';
 import mountains_behind from'./mountains_behind.png';
 import mountains_front from'./mountains_front.png';
 import stars from'./stars.png';
+import coding from"./icon1.png";
+import pet from"./icon2.png";
+import ranking from"./icon3.png";
+
 import './Home.css';
 import {Link} from 'react-router-dom'
 
-
-//一進網頁的第一個畫面 介紹網頁
 function Home() {
+    const [sec, setSec] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     
     useEffect(()=>{
         let Stars = document.getElementById('stars');
@@ -28,7 +32,8 @@ function Home() {
             Mountains_behind.style.top = value * 0.5 + 'px';
             Mountains_front.style.top = value * 0 +'px';
             Text.style.marginRight = value * 4 + 'px';
-
+            Text.style.marginTop = value * 1.5 + 'px';
+            Btn.style.marginTop = value * 1.5 + 'px';
         };
 
         window.addEventListener('scroll',handleScroll);
@@ -37,6 +42,7 @@ function Home() {
             window.removeEventListener('scroll',handleScroll);
         };
         
+      
     },[]);
 
     return (
@@ -49,27 +55,39 @@ function Home() {
                 <img src={mountains_front} id='mountains_front'/>
                 <a href='#sec' id='btn'>Introduction</a>
                 <h1>Code Trek</h1>
-                {/* <div className='box'>
-                    
-                    <p>網頁描述</p>
-                </div> */}
-               
             </section>
             <section id='sec'>
+                <h1>An Online Judge System <br/>that makes coding more interesting</h1>
                 <div className='description'>
-                    <h2>網頁介紹</h2>
-                    <p>描述</p>
-                    <div className='arrow'>
-                        <a href="/login" className="start">start</a>
+                    <div className='square' style={{marginTop: "170px"}}>
+                        <span></span><span></span><span></span>
+                        <div className='contentHome'>
+                        <img src = {coding}/>
+                        <p>Provide a daily program exercise</p>
+                        </div>
+                    </div>
+                    <div className='square2' style={{marginTop: "-100px"}}>
+                        <span></span><span></span><span></span>
+                        <div className='contentHome'>
+                        <img src = {pet}/>
+                        <p>Combined with the Education Simulation</p>
+                        </div>
+                    </div>
+                    <div className='square' style={{marginTop: "110px"}}>
+                        <span></span><span></span><span></span>
+                        <div className='contentHome'>
+                        <img src = {ranking}/>
+                        <p>Ranking based on point</p>
+                        </div>
                     </div>
                 </div>  
-            </section>
+                <div className='arrow'>
+                    <a href="/login" className="start">start</a>
+                </div>
+            </section> 
         </section>
        
     );
 };
 
 export default Home;
-
-
-//看要不要做像教學影片那樣的形式 底下用頁面截圖做教學

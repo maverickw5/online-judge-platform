@@ -30,7 +30,10 @@ function Register() {
     const [errorMessage, setErrorMessage] = useState('');
     const [profileImg, setProfileImg] = useState('')
     const [pet, setPet] = useState('');
-    
+    const [showPassword, changeShowPassword] = useState(false)
+    const [showCheckPassword, changeShowCheckPassword] = useState(false)
+
+    //註冊
     const register = (e)=>{
         e.preventDefault();
         const email = emailInputRef.current.value;
@@ -45,7 +48,7 @@ function Register() {
         const hashPassword = bcrypt.hashSync(password,10);
       
         //can call post api here
-      const PetSet = Axios.get(`http://localhost:3001/setPetDATA?email=` + emailInputRef.current.value + `&type=`+pet).then((response)=>{
+      const PetSet = Axios.get(`http://120.126.151.169:5001/setPetDATA?email=` + emailInputRef.current.value + `&type=`+pet).then((response)=>{
 
       })
       const data = Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register',//https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/register
@@ -61,8 +64,19 @@ function Register() {
           setErrorMessage('email already exist');
         }
       });
-
     }
+    //查看密碼
+    const changeType = (e)=>{
+      changeShowPassword(current => !current)
+      console.log(showPassword)
+    }
+    //查看檢查的密碼
+    const changeCheckType = (e)=>{
+      changeShowCheckPassword(current => !current)
+      console.log(showCheckPassword)
+    }
+
+    //檢查密碼是否正確，因為每次更新都會rerender一次，所以可以用useEffect
     useEffect(()=>{
       //如果checkpassword和input一樣，錯誤訊息設為NULL
       if(checkpassword == passwordInputRef.current.value){
@@ -73,6 +87,40 @@ function Register() {
       }
       //console.log(checkpassword);
     })
+
+    //查看密碼
+    useEffect(()=>{
+      let pswrd = document.getElementById('pswrd');
+      let toggleBtn = document.getElementById('toggleBtn');
+      
+      //console.log(pswrd);
+      //console.log(toggleBtn);
+      if(showPassword){
+        pswrd.setAttribute('type','text');
+        toggleBtn.classList.add('hide');
+      }
+      else{
+        pswrd.setAttribute('type','password');
+        toggleBtn.classList.remove('hide');
+      }
+    },[showPassword])
+
+    //查看檢查密碼
+    useEffect(()=>{
+      let CheckPswrd = document.getElementById('CheckPswrd');
+      let toggleBtn = document.getElementById('toggleBtnCheck');
+      
+      //console.log(pswrd);
+      //console.log(toggleBtn);
+      if(showCheckPassword){
+        CheckPswrd.setAttribute('type','text');
+        toggleBtn.classList.add('hide');
+      }
+      else{
+        CheckPswrd.setAttribute('type','password');
+        toggleBtn.classList.remove('hide');
+      }
+    },[showCheckPassword])
     
   return (
     <div className='register'>
@@ -80,10 +128,22 @@ function Register() {
         <div className='box'>
             <form>
               <h2>register</h2>
-              <input type="text" onChange={(e)=>setUserName(e.target.value)} placeholder="Name"></input>
-              <input type="email" ref={emailInputRef} placeholder="email@gmail.com"></input>
-              <input type="password" ref={passwordInputRef} placeholder="Password"></input>
-              <input type="password" onChange={(e)=>setCheckPassword(e.target.value)} placeholder="checkPassword"></input>
+              <div className='InputBox'>
+                <input type="text" onChange={(e)=>setUserName(e.target.value)} placeholder="Name"></input>
+              </div>
+              <div className='InputBox'>
+                <input type="email" ref={emailInputRef} placeholder="email@gmail.com"></input>
+              </div>
+             
+              <div className='InputBox'>
+                <input type="password" ref={passwordInputRef} placeholder="Password" id='pswrd'></input>
+                <span id='toggleBtn' onClick={(e)=>changeType()}></span>
+              </div>
+              <div className='InputBox'>
+                <input type="password" onChange={(e)=>setCheckPassword(e.target.value)} placeholder="checkPassword" id='CheckPswrd'></input>
+                <span id='toggleBtnCheck' onClick={(e)=>changeCheckType()}></span>
+              </div>
+            
               {errorMessage && <Message negative style={{fontSize:"10px",color:"red"}}>{errorMessage}</Message>}
               <h2 style={{margin:"5px"}}>Select Pet</h2>
               <div className='selectPet'>

@@ -11,9 +11,14 @@ function Login({changeEmail}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [showPassword, changeShowPassword] = useState(false)
     
     const navigate = useNavigate();
     
+    const changeType = (e)=>{
+      changeShowPassword(current => !current)
+      console.log(showPassword)
+    }
     const login = ()=>{
       Axios.post('https://asia-east1-online-judge-platform-29469.cloudfunctions.net/api/login',{email:email,password:password}).then((response)=>{
         console.log(response);
@@ -42,15 +47,37 @@ function Login({changeEmail}) {
       else if(errorMessage === "wrong password"){
         setErrorMessage("wrong password");
       }
+      let pswrd = document.getElementById('pswrd');
+      let toggleBtn = document.getElementById('toggleBtn');
     })
+    useEffect(()=>{
+      let pswrd = document.getElementById('pswrd');
+      let toggleBtn = document.getElementById('toggleBtn');
+      
+      //console.log(pswrd);
+      //console.log(toggleBtn);
+      if(showPassword){
+        pswrd.setAttribute('type','text');
+        toggleBtn.classList.add('hide');
+      }
+      else{
+        pswrd.setAttribute('type','password');
+        toggleBtn.classList.remove('hide');
+      }
+    },[showPassword])
   return (
     <div className='login'>
        <Link to="/"><h1>Code Trek</h1></Link>
         <div className='box'> 
             <h2>Login</h2>
+            <div className='InputBox'>
+              <input type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="email@gmail.com"></input>
+            </div>
+            <div className='InputBox'>
+              <input type="password" onChange={(e)=>setPassword(e.target.value)} id='pswrd' placeholder="password"></input>
+              <span id='toggleBtn' onClick={(e)=>changeType(e)}></span>
+            </div>
             
-            <input type="text" onChange={(e)=>setEmail(e.target.value)}></input>
-            <input type="password" onChange={(e)=>setPassword(e.target.value)}></input>
             {errorMessage && <Message negative style={{fontSize:"10px",color:"red"}}>{errorMessage}</Message>}
             <button onClick={()=>login()}>Log in</button>
             {/* <button onClick={()=>getMsg(msg)}>Log in</button> */}
