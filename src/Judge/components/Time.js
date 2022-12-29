@@ -35,7 +35,7 @@ function Time(props) {
             axios
                 .post(baseURL+"/usersucceed", {
                     userID: localStorage.getItem("userID"),
-                    problemID: props.problemID,
+                    problemID: sessionStorage.getItem("problemID"),
                     minute: time / 60000
                 })
                 .then(({data}) => {
