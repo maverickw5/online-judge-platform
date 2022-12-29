@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/register" element={window.localStorage.getItem('userID') ? <Navigate to ="/dashboard/pet" />:<Register />} />
         <Route exact path="/login" element={window.localStorage.getItem('userID') ? <Navigate to ="/dashboard/pet" />:<Login changeEmail={setEmail} />} />
         <Route exact path="/dashboard/*" element={window.localStorage.getItem('userID') ? <Dashboard />:<Navigate to ="/" />} />
-        <Route exact path="/judge" element={<Judge />} />
+        <Route exact path="/judge" element={window.localStorage.getItem('userID') ? <Judge />:<Navigate to ="/" />} />
       </Routes>
     </Router>
   );
