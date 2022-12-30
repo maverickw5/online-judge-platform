@@ -47,7 +47,7 @@ function Time(props) {
                     console.log(err);
                 })
         }
-    }, [props]);
+    }, [props.isSucceed]);
 
     return (
         <div className="text-end text-3xl font-sans">
