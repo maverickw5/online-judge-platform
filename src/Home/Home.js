@@ -57,32 +57,32 @@ function Home() {
                 <h1>Code Trek</h1>
             </section>
             <section id='sec'>
-                <h1>An Online Judge System <br/>that makes coding more interesting</h1>
+                <h1>An Online Judge Platform <br/>that makes coding more fun</h1>
                 <div className='description'>
                     <div className='square' style={{marginTop: "170px"}}>
                         <span></span><span></span><span></span>
                         <div className='contentHome'>
                         <img src = {coding}/>
-                        <p>Provide a daily program exercise</p>
+                        <p>Practice CPE exercises</p>
                         </div>
                     </div>
                     <div className='square2' style={{marginTop: "-100px"}}>
                         <span></span><span></span><span></span>
                         <div className='contentHome'>
                         <img src = {pet}/>
-                        <p>Combined with the Education Simulation</p>
+                        <p>Grow your pet from zero to hero</p>
                         </div>
                     </div>
                     <div className='square' style={{marginTop: "110px"}}>
                         <span></span><span></span><span></span>
                         <div className='contentHome'>
                         <img src = {ranking}/>
-                        <p>Ranking based on point</p>
+                        <p>Accumulate score and compete with everyone</p>
                         </div>
                     </div>
                 </div>  
                 <div className='arrow'>
-                    <a href="/login" className="start">start</a>
+                    <a href="/login" className="start">Start!</a>
                 </div>
             </section> 
         </section>
