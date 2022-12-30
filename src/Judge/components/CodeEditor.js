@@ -96,7 +96,7 @@ function CodeEditor(props) {
         } else {
             setOpen(false);
             props.setBlur("blur(0)");
-            setIsSucceed(0);
+            setIsSucceed(-1);
         }
     }
 
