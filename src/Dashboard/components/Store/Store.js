@@ -28,19 +28,19 @@ const Store = (props) => {
       window.sessionStorage.setItem('money',data.money);
       });
       if(food === 0){
-        Axios.get(`http://localhost:3001/setUserCookieADD?email=` + window.localStorage.getItem('email')).then((response)=>{
+        Axios.get(`https://120.126.151.169:5001/setUserCookieADD?email=` + window.localStorage.getItem('email')).then((response)=>{
         let data = response.data;
         console.log(data);
       })
       }
       else if(food === 1){
-        Axios.get(`http://localhost:3001/setUserStrawberryADD?email=` + window.localStorage.getItem('email')).then((response)=>{
+        Axios.get(`https://120.126.151.169:5001/setUserStrawberryADD?email=` + window.localStorage.getItem('email')).then((response)=>{
         let data = response.data;
         console.log(data);
       })
       }
       else if(food === 2){
-        Axios.get(`http://localhost:3001/setUserCandyADD?email=` + window.localStorage.getItem('email')).then((response)=>{
+        Axios.get(`https://120.126.151.169:5001/setUserCandyADD?email=` + window.localStorage.getItem('email')).then((response)=>{
         let data = response.data;
         console.log(data);
       })

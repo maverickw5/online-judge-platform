@@ -40,6 +40,7 @@ function Time(props) {
                 })
                 .then(({data}) => {
                     console.log(data);
+                    props.setWaitflag(true);
                     setTime(0);
                 })
                 .catch(({err}) => {

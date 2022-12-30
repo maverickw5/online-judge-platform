@@ -14,7 +14,7 @@ function SubmitPopup(props) {
     const [usermoney, setUsermoney] = useState();
 
     useEffect(() => {
-        if (props.isSucceed === 1) {
+        if (props.waitflag) {
             axios
                 .post(baseURL+"/userdata", {
                     userID: localStorage.getItem("userID")

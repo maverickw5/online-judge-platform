@@ -99,11 +99,12 @@ function CodeEditor(props) {
             setIsSucceed(-1);
         }
     }
+    const [waitflag, setWaitflag] = useState(false);
 
     return (
         <div className="w-full h-full flex flex-col gap-2">
             <div className='pr-0.5'>
-                <Time isSucceed={isSucceed} />
+                <Time isSucceed={isSucceed} setWaitflag={setWaitflag} />
             </div>
             <div className="flex justify-between">
                 <select value={lang} className="border-2 border-black outline-none p-1 pr-3 rounded-md transition ease-in-out delay-50 hover:scale-95" onChange={e=>{setLang(e.target.value)}}>
@@ -125,7 +126,7 @@ function CodeEditor(props) {
                         Submit
                     </button>
                     <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-                        <SubmitPopup isSucceed={isSucceed} closeModal={closeModal} />
+                        <SubmitPopup isSucceed={isSucceed} waitflag={waitflag} closeModal={closeModal} />
                     </Popup>
                 </div>
             </div>
